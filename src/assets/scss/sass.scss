@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+$color: blue;
+$primary-color: #673ab7;
+$favorite-blue: #536dfe;
+
+.container1 {
+  background-color: orange;
+  .head {
+    color: blue;
+    .container2 {
+      background-color: yellowgreen;
+      .title {
+        color: $favorite-blue;
+      }
+    }
+  }
+}
+
+.box1 {
+  $color: red !global;
+  background: $color;
+}
+.box2 {
+  background: $color;
+}
+.box3 {
+  $color: purple;
+  background: $color;
+}

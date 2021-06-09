@@ -30,9 +30,10 @@ export default {};
 
 .card__image > a {
   width: 100%;
-  background-image: url("/src/assets/lonely-814631_1280.jpg");
+  background-image: url("~@/assets/lonely-814631_1280.jpg");
   background-position: 62%;
   background-size: cover;
+  background-repeat: no-repeat;
   display: block;
 }
 

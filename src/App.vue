@@ -5,52 +5,23 @@
       <router-link to="/TextUi">Text UI</router-link>
     </nav>
     <router-view></router-view>
+    <sass-vue></sass-vue>
+    <div class="head">
+      <h1 class="text">Hi I'm scss</h1>
+    </div>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  width: 100%;
-  height: 100%;
-}
+<script>
+import SassVue from "./components/SassVue.vue";
 
-.flex {
-  display: flex;
-}
+export default {
+  components: {
+    SassVue,
+  },
+};
+</script>
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  padding: 0;
-  margin: 0;
-}
-
-.nav {
-  height: 10%;
-  padding-top: 2%;
-}
+<style lang="scss">
+@import "~@/assets/scss/main.scss";
 </style>
