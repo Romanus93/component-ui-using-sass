@@ -30,28 +30,28 @@ export default {
     return {
       exItemlist: [
         {
-          image: "/src/assets/lonely-814631_1280.jpg",
+          image: "/src/assets/brown-264289_1280.jpg",
           title: "제목",
           description: "설명",
           rating: "icon",
           comment: "댓글",
         },
         {
-          image: "/src/assets/lonely-814631_1280.jpg",
+          image: "/src/assets/brown-264289_1280.jpg",
           title: "제목",
           description: "설명",
           rating: "icon",
           comment: "댓글",
         },
         {
-          image: "/src/assets/lonely-814631_1280.jpg",
+          image: "/src/assets/brown-264289_1280.jpg",
           title: "제목",
           description: "설명",
           rating: "icon",
           comment: "댓글",
         },
         {
-          image: "/src/assets/lonely-814631_1280.jpg",
+          image: "/src/assets/brown-264289_1280.jpg",
           title: "제목",
           description: "설명",
           rating: "icon",

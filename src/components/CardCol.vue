@@ -13,7 +13,7 @@
     </div>
     <div class="card__rating">
       <div class="rating">별점</div>
-      <div class="comment">Lorem ipsum dolor sit,</div>
+      <div class="comment">Lorem ipsum</div>
     </div>
   </article>
 </template>
@@ -25,12 +25,12 @@ export default {};
 <style scoped>
 .card {
   border: 5px solid orange;
-  width: 30%;
+  width: 100%;
 }
 
 .card__image > a {
   width: 100%;
-  background-image: url("~@/assets/lonely-814631_1280.jpg");
+  background-image: url("~@/assets/brown-264289_1280.jpg");
   background-position: 62%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -53,5 +53,6 @@ export default {};
 
 .card > div {
   border: 1px solid black;
+  width: 100%;
 }
 </style>

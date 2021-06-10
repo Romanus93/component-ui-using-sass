@@ -19,35 +19,35 @@ export default {};
 </script>
 
 <style scoped>
-.card {
-  flex-direction: row;
-  border: 5px solid orange;
-  width: 48%;
+.card-container--row .card {
+  /* flex-direction: row; */
+  /* border: 5px solid orange; */
+  width: 100%;
 }
 
-.card__image {
+.card-container--row .card__image {
   width: 40%;
 }
 
-.card__image > a {
+.card-container--row .card__image > a {
   width: 100%;
-  background-image: url("/src/assets/lonely-814631_1280.jpg");
+  background-image: url("/src/assets/brown-264289_1280.jpg");
   background-position: 62%;
   background-size: cover;
   display: block;
 }
 
-.card__image > a:after {
+.card-container--row .card__image > a:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
 
-.card__info {
+.card-container--row .card__info {
   width: 60%;
 }
 
-.card > div {
+.card-container--row .card > div {
   border: 1px solid black;
 }
 </style>
