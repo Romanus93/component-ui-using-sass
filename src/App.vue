@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="#app">
     <nav class="nav">
       <router-link to="/">Card UI</router-link> |
       <router-link to="/TextUi">Text UI</router-link>
@@ -13,9 +13,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   width: 100%;
-  height: 100%;
 }
 
 .flex {
@@ -28,12 +26,13 @@
 
 html {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 body {
   width: 100%;
-  height: 100%;
+  max-width: 100%;
+  /* height: 100%; */
   margin: 0;
   padding: 0;
 }
@@ -54,13 +53,23 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   padding: 0;
   margin: 0;
 }
 
+header,
+section,
+nav,
+article,
+footer,
+aside {
+  display: block;
+}
+
 .nav {
   height: 10vh;
-  padding-top: 2%;
+  padding-top: 3vh;
 }
 </style>

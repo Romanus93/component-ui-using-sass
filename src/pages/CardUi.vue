@@ -1,9 +1,9 @@
 <template>
-  <main class="main">
+  <div class="main">
     <section>
       <h2>col - card</h2>
       <ul class="card-container card-container--col flex">
-        <li class="card" v-for="item in arrCol" :key="item.id">
+        <li v-for="item in arrCol" :key="item.id">
           <card-col></card-col>
         </li>
       </ul>
@@ -11,12 +11,12 @@
     <section>
       <h2>row - card</h2>
       <ul class="card-container card-container--row flex">
-        <li class="card" v-for="item in arrRow" :key="item.id">
+        <li v-for="item in arrRow" :key="item.id">
           <card-row></card-row>
         </li>
       </ul>
     </section>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -31,8 +31,66 @@ export default {
   },
   data() {
     return {
-      arrCol: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
-      arrRow: [{ id: 1 }, { id: 2 }, { id: 3 }],
+      arrCol: [
+        {
+          id: 1,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          comment: "comment",
+        },
+        {
+          id: 2,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          comment: "comment",
+        },
+        {
+          id: 3,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          comment: "comment",
+        },
+        {
+          id: 4,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          comment: "comment",
+        },
+      ],
+      arrRow: [
+        {
+          id: 1,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          writer: "writer",
+        },
+        {
+          id: 2,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          writer: "writer",
+        },
+        {
+          id: 3,
+          label: "card label",
+          title: "card title",
+          description: "card description",
+          rating: "rating",
+          writer: "writer",
+        },
+      ],
     };
   },
 };
@@ -46,11 +104,13 @@ export default {
 
 .main section {
   width: 100%;
-  height: 90vh;
+  /* height: 90vh; */
+  margin: 0 auto;
 }
 
 h2 {
   line-height: 10vh;
+  padding-left: 5px;
 }
 
 .main .card-container {
@@ -59,9 +119,9 @@ h2 {
   border: 5px salmon solid; */
 }
 
-.card-container--col {
+/* .card-container--col {
   justify-content: flex-start;
-}
+} */
 
 section {
   margin: 0;
@@ -83,5 +143,19 @@ section {
 .main section .card-container--row li {
   width: 50%;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 800px) {
+  .card-container--col {
+    flex-wrap: wrap;
+  }
+
+  .main section .card-container--col li {
+    width: 50%;
+  }
+
+  .main section .card-container--row li {
+    width: 100%;
+  }
 }
 </style>
