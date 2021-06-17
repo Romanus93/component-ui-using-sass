@@ -1,37 +1,54 @@
 <template>
-  <article class="card">
-    <div class="card__image">
-      <a href="#" :aria-label="info"></a>
-    </div>
-    <div class="card__info">
-      <div class="label">Card Label</div>
-      <h3 class="title">Card Title</h3>
-      <div class="description">
-        <span>Hilight</span>
-        <span>cross out</span>
+  <li class="col-card-contaier">
+    <article class="card">
+      <div class="card__image">
+        <a href="#" :aria-label="info"></a>
       </div>
-    </div>
-    <div class="card__rating flex">
-      <div class="rating">별점</div>
-      <div class="comment">Lorem ipsum</div>
-    </div>
-  </article>
+      <div class="card__info">
+        <p class="label">{{ card.label }}</p>
+        <h3 class="title">{{ card.title }}</h3>
+        <div class="description">
+          <span>{{ card.highlight }}</span>
+          <span>|</span>
+          <span>{{ card.crossOut }}</span>
+        </div>
+      </div>
+      <div class="card__rating" v-if="card.rating || card.isComment">
+        <div class="ch">
+          <div class="rating">{{ card.rating }}</div>
+          <p class="comment" v-if="card.isComment">{{ card.comment }}</p>
+        </div>
+      </div>
+    </article>
+  </li>
 </template>
 
 <script>
 export default {
+  name: "cardCol",
   data() {
     return {
       info: "Roasted Bean",
-      item: "",
     };
+  },
+  props: {
+    card: {
+      type: Object,
+    },
   },
 };
 </script>
 
 <style scoped>
+.col-card-contaier {
+  width: 100%;
+  position: relative;
+  left: 2.5px;
+}
+
 .card {
-  border: 5px solid orange;
+  border: 1px solid;
+  margin-right: 5px;
   width: 100%;
 }
 
@@ -50,21 +67,28 @@ export default {
   padding-bottom: 100%;
 }
 
+.card__info {
+  height: 96px;
+  position: relative;
+}
+
 .card__info .label {
   border: 1px solid salmon;
-  height: 2em;
-  line-height: 1.5em;
+  padding: 5px;
 }
 
 .card__info .title {
   border: 1px solid salmon;
-  height: 3.5em;
-  line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
 }
 
 .card__info .description {
-  height: 2em;
-  line-height: 1.5em;
+  position: absolute;
+  bottom: 3px;
+  padding: 0 5px;
 }
 
 .label,
@@ -72,22 +96,35 @@ export default {
 .description,
 .rating,
 .comment {
-  padding: 2px 5px;
+  /* padding: 2px 5px; */
 }
 
 .card__rating {
-  justify-content: center;
-  flex-direction: column;
+  height: 56px;
+  width: 100%;
+  padding: 0px 5px 5px 5px;
+  display: table;
+  table-layout: fixed;
+}
+
+.card__rating .ch {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .card__rating .rating {
-  padding-top: calc(1.5em);
-  padding-bottom: calc(1.5em);
-  height: 4em;
 }
 
 .card__rating .comment {
-  height: auto;
-  line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+/* <div class="card__rating" v-if="card.rating || card.isComment">
+        <div class="ch">
+          <div class="rating">{{ card.rating }}</div>
+          <p class="comment" v-if="card.isComment">{{ card.comment }}</p>
+        </div>
+      </div> */
 </style>

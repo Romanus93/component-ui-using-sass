@@ -24,30 +24,20 @@
   box-sizing: border-box;
 }
 
-html {
-  width: 100vw;
-  /* height: 100vh; */
-}
-
+html,
 body {
   width: 100%;
-  max-width: 100%;
-  /* height: 100%; */
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-li {
-  padding: 0;
-  margin: 0;
-}
-
+ul,
+li,
 h1,
 h2,
 h3,
@@ -71,5 +61,16 @@ aside {
 .nav {
   height: 10vh;
   padding-top: 3vh;
+}
+
+a {
+  cursor: pointer;
+  color: #000;
+}
+
+.text--limit-oneline {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

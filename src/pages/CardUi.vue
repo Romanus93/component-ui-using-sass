@@ -2,18 +2,14 @@
   <div class="main">
     <section>
       <h2>col - card</h2>
-      <ul class="card-container card-container--col flex">
-        <li v-for="item in arrCol" :key="item.id">
-          <card-col></card-col>
-        </li>
+      <ul class="cards--col">
+        <card-col v-for="item in items" :key="item.id" :card="item" />
       </ul>
     </section>
     <section>
       <h2>row - card</h2>
-      <ul class="card-container card-container--row flex">
-        <li v-for="item in arrRow" :key="item.id">
-          <card-row></card-row>
-        </li>
+      <ul class="cards--row">
+        <card-row v-for="item in items" :key="item.id" :card="item" />
       </ul>
     </section>
   </div>
@@ -31,64 +27,47 @@ export default {
   },
   data() {
     return {
-      arrCol: [
+      items: [
         {
           id: 1,
           label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          comment: "comment",
+          title: "🤗Roasted Bean",
+          highlight: "highlight",
+          crossOut: "crossOut",
+          isComment: true,
+          isRating: true,
+          comment:
+            "☕The Coffee Bean & Tea Leaf is an American coffee chain founded in 1963. It is owned and operated by Jollibee Foods Corporation, which has its corporate headquarters in Pasig City, Philippines. As of2017, the chain has over 1,000 self-owned and franchised stores inthe United States and 31 other countries.The Coffee Bean & Tea Leafis an American coffee chain founded in 1963. It is owned andoperated by Jollibee Foods Corporation, which has its corporateheadquarters in Pasig City, Philippines. As of 2017, the chain hasover 1,000 self-owned and franchised stores in the United States and31 other countries.",
+          rating: "🍗🍗🍗🍗🍗",
+          author: "author",
+          to: "/#",
         },
         {
           id: 2,
           label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          comment: "comment",
+          title:
+            "The Coffee Bean & Tea Leaf is an American coffee chain founded in 1963.",
+          highlight: "highlight",
+          crossOut: "crossOut",
+          isComment: false,
+          comment: "",
+          isRating: true,
+          rating: "🍗🍗🍗🍗🍗",
+          author: "author",
+          to: "/#",
         },
         {
           id: 3,
           label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          comment: "comment",
-        },
-        {
-          id: 4,
-          label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          comment: "comment",
-        },
-      ],
-      arrRow: [
-        {
-          id: 1,
-          label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          writer: "writer",
-        },
-        {
-          id: 2,
-          label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          writer: "writer",
-        },
-        {
-          id: 3,
-          label: "card label",
-          title: "card title",
-          description: "card description",
-          rating: "rating",
-          writer: "writer",
+          title: "🤗Roasted Bean",
+          highlight: "highlight",
+          crossOut: "crossOut",
+          isComment: false,
+          comment: "",
+          isRating: false,
+          rating: "",
+          author: "author",
+          to: "/#",
         },
       ],
     };
@@ -98,13 +77,13 @@ export default {
 
 <style scoped>
 .main {
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   border: 2px solid blueviolet;
 }
 
 .main section {
-  width: 100%;
-  /* height: 90vh; */
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -113,48 +92,29 @@ h2 {
   padding-left: 5px;
 }
 
-.main .card-container {
-  width: 100%;
-  /* padding: 5px;
-  border: 5px salmon solid; */
+.main section .cards--col {
+  border: 1px solid salmon;
+  /* width: 100%; */
 }
 
-/* .card-container--col {
-  justify-content: flex-start;
-} */
-
-section {
-  margin: 0;
+.main section .cards--col li {
+  width: 33.33%;
+  width: calc(100% / 3);
+  display: inline-block;
+  vertical-align: top;
 }
 
-.main section .card-container li {
-  padding: 5px;
-}
-
-.main section .card-container--col li {
-  width: 25%;
-  /* border: 5px olivedrab solid; */
-}
-
-.main section .card-container--row {
-  flex-wrap: wrap;
-}
-
-.main section .card-container--row li {
+.main section .cards--row li {
   width: 50%;
-  flex-wrap: wrap;
+  display: inline-block;
 }
 
 @media screen and (max-width: 800px) {
-  .card-container--col {
-    flex-wrap: wrap;
-  }
-
-  .main section .card-container--col li {
+  .main section .cards--col li {
     width: 50%;
   }
 
-  .main section .card-container--row li {
+  .main section .cards--row li {
     width: 100%;
   }
 }

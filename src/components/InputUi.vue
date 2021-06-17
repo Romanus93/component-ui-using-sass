@@ -79,7 +79,7 @@ export default {
 <style scoped>
 .text-btn-box {
   width: 100%;
-  border: 5px solid orange;
+  border: 1px solid;
   height: 25vh;
 }
 

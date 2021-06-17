@@ -1,44 +1,65 @@
 <template>
-  <article class="card flex">
-    <div class="card__image">
-      <a href="#" aria-label="lonely man"></a>
-    </div>
-    <div class="card__info">
-      <h3 class="title">Card Title</h3>
-      <p class="comment">
-        The Coffee Bean & Tea Leaf is an American coffee chain founded in 1963.
-        It is owned and operated by Jollibee Foods Corporation, which has its
-        corporate headquarters in Pasig City, Philippines. As of 2017, the chain
-        has over 1,000 self-owned and franchised stores in the United States and
-        31 other countries.
-      </p>
-      <div class="card__rating">
-        <div class="rating">
-          <button>x</button><button>x</button><button>x</button
-          ><button>x</button><button>x</button>
-        </div>
-        |
-        <div class="user">User Name</div>
+  <li class="row-card-container">
+    <a class="card" :href="card.to">
+      <div class="card__image">
+        <span aria-label="roasted bean"></span>
       </div>
-    </div>
-  </article>
+      <div class="card-info-rating">
+        <div class="card__info">
+          <h3 class="title">
+            {{ card.title }}
+          </h3>
+          <p class="comment" v-if="card.isComment">
+            {{ card.comment }}
+          </p>
+        </div>
+        <div class="card__rating" v-if="card.rating">
+          <div class="rating">
+            <button>x</button><button>x</button><button>x</button
+            ><button>x</button><button>x</button>
+          </div>
+          <span class="bar">|</span>
+          <span class="user">{{ card.author }}</span>
+        </div>
+      </div>
+    </a>
+  </li>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "CardRow",
+  props: {
+    card: {
+      type: Object,
+    },
+  },
+};
 </script>
 
 <style scoped>
-.card {
-  border: 5px solid orange;
+.row-card-container {
   width: 100%;
+  border: 1px solid blue;
+}
+
+.row-card-container .card {
+  display: block;
+  position: relative;
+  margin-right: 5px;
+  left: 2.5px;
+  top: 2.5px;
+  margin-bottom: 5px;
+  border: 1px solid black;
 }
 
 .card .card__image {
   width: 40%;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
-.card .card__image > a {
+.card .card__image > span {
   width: 100%;
   background-image: url("~@/assets/brown-264289_1280.jpg");
   background-position: 62%;
@@ -46,53 +67,79 @@ export default {};
   display: block;
 }
 
-.card .card__image > a:after {
+.card .card__image > span:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
 
-.card .card__info {
-  padding: 15px;
+.card-info-rating {
   width: 60%;
+  float: right;
+  padding: 5px;
+  height: 100%;
+}
+
+.card .card__info {
+  height: 60%;
 }
 
 .card__info .title {
-  height: 3.5em;
   line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__info .comment {
-  height: 7.5rem;
-  line-height: 1.5em;
   border: 1px salmon solid;
+  margin-top: 1em;
+  /* height: auto; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* 라인수 */
+  -webkit-line-clamp: 10; /* 라인수 */
   -webkit-box-orient: vertical;
   word-wrap: break-word;
 }
 
-.card__info .card__rating {
+.card-info-rating .card__rating {
+  position: absolute;
+  bottom: 5px;
   border: 1px blue solid;
-  height: auto;
-  padding-top: 1.5em;
 }
 
-.card__info .card__rating .rating {
-  /* width: auto; */
+.card-info-rating .card__rating .rating button {
 }
 
-.card__info .card__rating .rating button {
-  margin-right: 0.5em;
+.card-info-rating .card__rating .rating button:nth-last-child(1) {
 }
 
-.card__info .card__rating .rating button:nth-last-child(1) {
-  margin-right: 0;
-}
-
-.card__info .card__rating div {
+.card-info-rating .card__rating div {
   display: inline-block;
+}
+
+@media screen and (min-width: 1000px) {
+  .card__info .comment {
+    -webkit-line-clamp: 4;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .card__info .comment {
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card__info .comment {
+    -webkit-line-clamp: 5;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card__info .comment {
+    -webkit-line-clamp: 3;
+  }
 }
 </style>
