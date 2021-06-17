@@ -94,13 +94,21 @@ export default {
 .card__info .comment {
   border: 1px salmon solid;
   margin-top: 1em;
-  /* height: auto; */
+  /* ie지원 */
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 10; /* 라인수 */
-  -webkit-box-orient: vertical;
-  word-wrap: break-word;
+  line-height: 1.2em;
+  max-height: 4.8em;
+  word-break: break-all;
+  position: relative;
+  margin-right: 2px;
+  padding-right: 9px;
+}
+
+.card__info .comment:before {
+  content: "...";
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .card-info-rating .card__rating {
@@ -127,19 +135,29 @@ export default {
 
 @media screen and (min-width: 800px) and (max-width: 1000px) {
   .card__info .comment {
-    -webkit-line-clamp: 2;
+    max-height: 3.6em;
   }
 }
 
 @media screen and (max-width: 800px) {
   .card__info .comment {
-    -webkit-line-clamp: 5;
+    max-height: 7.2em;
+  }
+
+  .card__info .comment:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white; /* 배경색과 동일하게 적용 */
   }
 }
 
 @media screen and (max-width: 650px) {
   .card__info .comment {
-    -webkit-line-clamp: 3;
+    max-height: 6em;
   }
 }
 </style>

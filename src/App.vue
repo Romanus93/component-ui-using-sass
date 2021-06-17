@@ -67,10 +67,4 @@ a {
   cursor: pointer;
   color: #000;
 }
-
-.text--limit-oneline {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 </style>

@@ -44,6 +44,9 @@ export default {
   width: 100%;
   position: relative;
   left: 2.5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  bottom: -2.5px;
 }
 
 .card {
@@ -119,6 +122,12 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 800px) {
+  .card__info .comment {
+    -webkit-line-clamp: 4;
+  }
 }
 
 /* <div class="card__rating" v-if="card.rating || card.isComment">

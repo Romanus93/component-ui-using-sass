@@ -118,4 +118,10 @@ h2 {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .main section .cards--col li {
+    width: 100%;
+  }
+}
 </style>
