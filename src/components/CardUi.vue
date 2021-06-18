@@ -15,7 +15,6 @@
       <div class="card__rating flex flex--text-position">
         <div class="rating">
           {{ card.rating }}
-          <!-- <span class="rating--5"><i class="fas fa-star"></i></span> -->
         </div>
         <div class="comment">{{ card.comment }}</div>
       </div>

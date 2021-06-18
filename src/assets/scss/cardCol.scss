@@ -1,0 +1,74 @@
+.col-card-contaier {
+  display: inline-block;
+  vertical-align: top;
+  width: 33.33%;
+  width: (100% / 3);
+  position: relative;
+  left: 2.5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  bottom: -2.5px;
+  .card {
+    border: 1px solid;
+    margin-right: 5px;
+    width: 100%;
+
+    &__image {
+      > a {
+        width: 100%;
+        background-position: 62%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+
+        &:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+    }
+
+    .card__info {
+      height: 96px;
+      position: relative;
+
+      .label {
+        padding: 5px;
+      }
+
+      .title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 2px 5px 5px 5px;
+      }
+
+      .description {
+        line-height: 1em;
+        position: absolute;
+        bottom: 3px;
+        padding: 0 5px;
+      }
+    }
+
+    .card__rating-comment {
+      height: 56px;
+      width: 100%;
+      padding: 0px 5px 5px 5px;
+      display: table;
+      table-layout: fixed;
+
+      > div {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .comment {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

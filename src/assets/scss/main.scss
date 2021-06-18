@@ -1,52 +1,70 @@
 @charset "UTF-8";
 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import "./variable.scss";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   width: 100%;
-  height: 100%;
-}
-
-.flex {
-  display: flex;
 }
 
 * {
   box-sizing: border-box;
+  font-family: $font-family;
 }
 
-html {
-  width: 100vw;
-  height: 100vh;
-}
-
+html,
 body {
   width: 100%;
-  height: 100%;
-  margin: 0;
+  overflow-x: hidden;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   padding: 0;
+  margin: 0;
 }
 
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-li {
-  padding: 0;
-  margin: 0;
+header,
+section,
+nav,
+article,
+footer,
+aside {
+  display: block;
+}
+
+ul {
+  list-style: none;
 }
 
 .nav {
-  height: 10%;
-  padding-top: 2%;
+  height: 10vh;
+  padding-top: 3vh;
 }
 
-.head {
-  .text {
-    color: blue;
-  }
+a {
+  cursor: pointer;
+  color: $color-black;
+}
+
+.bar {
+  width: 10px;
+  display: inline-block;
+  text-align: center;
 }

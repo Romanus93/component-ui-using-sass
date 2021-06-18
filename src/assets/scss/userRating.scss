@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "./variable.scss";
+
+.rating-container {
+  display: inline-block;
+  .rating {
+    margin-right: 5px;
+    &.on {
+      color: $color-blue-600;
+    }
+    &.off {
+      color: $color-blue-grey-100;
+    }
+  }
+}

@@ -95,6 +95,10 @@ export default {
   padding: 0 0.5rem;
 }
 
+textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
 .text-box .counter {
   position: relative;
   right: -11.6rem;
@@ -109,10 +113,6 @@ export default {
 .button--save {
   width: 100%;
   height: 100%;
-}
-
-textarea::placeholder {
-  color: var(--placeholder-color);
 }
 
 .text-box-with-btn {
