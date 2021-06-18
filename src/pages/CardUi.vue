@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <main class="card-ui">
     <section>
       <h2>col - card</h2>
       <ul class="cards--col">
@@ -12,7 +12,7 @@
         <card-row v-for="item in items" :key="item.id" :card="item" />
       </ul>
     </section>
-  </div>
+  </main>
 </template>
 
 <script>

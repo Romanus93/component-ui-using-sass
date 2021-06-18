@@ -25,13 +25,11 @@
 
 <script>
 import UserRating from "./UserRating.vue";
-import SassVue from "./SassVue.vue";
 
 export default {
   name: "cardCol",
   components: {
     UserRating,
-    SassVue,
   },
   created() {
     console.log(1, this.card.imgUrl);
