@@ -1,25 +1,25 @@
 <template>
-  <main class="multi-line-text-ui">
+  <main class="textarea-ui">
     <section>
       <h2>textarea</h2>
       <ul>
-        <multi-line-text
+        <text-area
           v-for="item in items"
           :key="item.id"
           :textarea="item"
-        ></multi-line-text>
+        ></text-area>
       </ul>
     </section>
   </main>
 </template>
 
 <script>
-import MultiLineText from "../components/MultiLineText.vue";
+import TextArea from "../components/TextArea.vue";
 
 export default {
   name: "TextUi",
   components: {
-    MultiLineText,
+    TextArea,
   },
   data: () => {
     return {

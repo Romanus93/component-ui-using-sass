@@ -1,13 +1,17 @@
 @charset "UTF-8";
 
-.multi-line-text-container {
+@import "../utils/variable";
+@import "../utils/mixin";
+
+.textarea-container {
   width: 100%;
   margin: 10px;
-  .multi-line-text {
+  .textarea {
     position: relative;
     width: fit-content;
 
     & > textarea {
+      @include border_radius( 2px, 5px);
       /* ie 스크롤바 없애기 */
       overflow: hidden;
     }
@@ -22,5 +26,6 @@
   .btn--save {
     width: 50px;
     height: 30px;
+    @include border_radius( 2px, 5px);
   }
 }

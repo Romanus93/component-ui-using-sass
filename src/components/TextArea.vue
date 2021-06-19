@@ -1,9 +1,6 @@
 <template>
-  <li class="multi-line-text-container">
-    <div
-      class="multi-line-text"
-      :class="{ 'multi-line-text-with-btn': textarea.isButton }"
-    >
+  <li class="textarea-container">
+    <div class="textarea" :style="">
       <textarea
         :placeholder="textarea.placeholder"
         :maxlength="textarea.maxlength"
@@ -12,7 +9,7 @@
         :disabled="textarea.disabled"
         rows="5"
         cols="50"
-        :style="colorText"
+        :style="changeTextsColor"
       ></textarea>
       <span class="characters-counter">
         {{ counterCharacters }}
@@ -32,14 +29,11 @@
 
 <script>
 export default {
-  name: "MultiLineText",
+  name: "TextArea",
   props: {
     textarea: {
       type: Object,
     },
-  },
-  created() {
-    console.log(this.textarea);
   },
   data() {
     return {
@@ -48,14 +42,20 @@ export default {
   },
   computed: {
     counterCharacters: function () {
-      let lengthCharacters = this.characters.length;
-      let limitCharacters = 500;
-      return limitCharacters - lengthCharacters;
+      let charactersLength = this.characters.length;
+      let charactersLimit = 500;
+      return charactersLimit - charactersLength;
     },
-    colorText: function () {
-      let color =
-        this.textarea.readonly && this.textarea.disabled ? "red" : "black";
-      return `color: ${color}`;
+    changeTextsColor: function () {
+      let textsColor =
+        ( this.textarea.readonly && this.textarea.disabled ) ? "red" : "black";
+      return `color: ${textsColor}`;
+    },
+    changeTextareaBgColor: function () {
+      let textareaBgColor =
+        (this.textarea.readonly && this.textarea.disabled ) && "rgb(250, 250, 250)";
+      //$color-grey-50: rgb(250, 250, 250)
+      return `background-color: ${textareaBgColor}`;
     },
     isDisabledBtn: function () {
       return this.characters.length === 0 ? true : false;
@@ -63,8 +63,8 @@ export default {
   },
   methods: {
     saveTexts() {
-      let infoText = `${this.characters} 이 저장되었습니다.`;
-      alert(infoText);
+      let textInfo = `${this.characters} 이 저장되었습니다.`;
+      alert(textInfo);
       this.characters = "";
     },
   },
@@ -72,5 +72,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/components/multiLineText.scss";
+@import "../assets/scss/components/textArea.scss";
 </style>
