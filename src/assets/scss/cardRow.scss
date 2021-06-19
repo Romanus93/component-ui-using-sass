@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .row-card-container {
   width: 50%;
   display: inline-block;
@@ -85,7 +87,7 @@
     .comment {
       max-height: 7.2em;
 
-      :after {
+      &:after {
         content: "";
         position: absolute;
         right: 0;

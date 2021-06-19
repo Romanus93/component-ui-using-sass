@@ -1,5 +1,5 @@
 <template>
-  <div class="#app">
+  <div id="app">
     <nav class="nav">
       <router-link to="/">Card UI</router-link> |
       <router-link to="/TextUi">Text UI</router-link>

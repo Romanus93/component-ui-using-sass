@@ -12,19 +12,21 @@
         :disabled="textarea.disabled"
         rows="5"
         cols="50"
-        :style="
-          textarea.placeholderColor
-            ? { '--placeholder-color': textarea.placeholderColor }
-            : {}
-        "
+        :style="colorText"
       ></textarea>
-      <span class="character-counter">
-        {{ characterCounter }}
+      <span class="characters-counter">
+        {{ counterCharacters }}
       </span>
     </div>
-    <div class="btn-box" v-if="textarea.isButton">
-      <button class="btn--save" type="button">Save</button>
-    </div>
+    <button
+      class="btn--save"
+      v-if="textarea.isButton"
+      :disabled="isDisabledBtn"
+      type="button"
+      @click="saveTexts"
+    >
+      Save
+    </button>
   </li>
 </template>
 
@@ -41,59 +43,57 @@ export default {
   },
   data() {
     return {
-      characters: "",
+      characters: this.textarea.text,
     };
   },
   computed: {
-    characterCounter() {
-      let char = this.characters.length;
-      let limit = 500;
-      return limit - char;
+    counterCharacters: function () {
+      let lengthCharacters = this.characters.length;
+      let limitCharacters = 500;
+      return limitCharacters - lengthCharacters;
     },
-    // disableButton() {
-    //   if (this.characters == "입력해주세요.") {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // },
+    colorText: function () {
+      let color =
+        this.textarea.readonly && this.textarea.disabled ? "red" : "black";
+      return `color: ${color}`;
+    },
+    isDisabledBtn: function () {
+      return this.characters.length === 0 ? true : false;
+    },
+  },
+  methods: {
+    saveTexts() {
+      let infoText = `${this.characters} 이 저장되었습니다.`;
+      alert(infoText);
+      this.characters = "";
+    },
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .multi-line-text-container {
   width: 100%;
-  border: 5px solid salmon;
-}
+  margin: 10px;
+  .multi-line-text {
+    position: relative;
+    width: fit-content;
 
-.multi-line-text {
-  width: 400px;
-  margin: 10px auto;
-}
+    & > textarea {
+      /* ie 스크롤바 없애기 */
+      overflow: hidden;
+    }
 
-.multi-line-text textarea {
-  resize: none;
-}
+    .characters-counter {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+    }
+  }
 
-textarea::placeholder {
-  color: var(--placeholder-color);
-}
-
-.multi-line-text .counter {
-}
-
-.btn-box {
-  width: 400px;
-  margin: 0 auto;
-  border: 5px seagreen solid;
-}
-
-.btn--save {
-  width: 50px;
-  height: 30px;
-}
-
-.multi-line-text-with-btn {
+  .btn--save {
+    width: 50px;
+    height: 30px;
+  }
 }
 </style>

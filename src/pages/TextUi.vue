@@ -1,13 +1,15 @@
 <template>
   <main class="multi-line-text-ui">
-    <h1>HomeTwo</h1>
-    <ul>
-      <multi-line-text
-        v-for="item in items"
-        :key="item.id"
-        :textarea="item"
-      ></multi-line-text>
-    </ul>
+    <section>
+      <h2>textarea</h2>
+      <ul>
+        <multi-line-text
+          v-for="item in items"
+          :key="item.id"
+          :textarea="item"
+        ></multi-line-text>
+      </ul>
+    </section>
   </main>
 </template>
 
@@ -27,42 +29,39 @@ export default {
           type: "base",
           name: "textarea",
           text: "",
-          placeholder: "초기값이 있을 수 있습니다.",
+          placeholder: "textarea-placeholder",
           characters: "입력해주세요.",
           cols: 50,
           rows: 5,
           maxlength: 500,
-          placeholderColor: "black",
           readonly: false,
           disabled: false,
-          isButton: false,
+          isButton: true,
         },
         {
           id: 2,
           type: "base",
           name: "textarea",
-          text: "",
-          placeholder: "입력시 버튼이 활성화 됩니다.",
+          text: "초기값이 존재",
+          placeholder: "textarea-placeholder",
           characters: "입력해주세요.",
           cols: 50,
           rows: 5,
-          placeholderColor: "black",
           readonly: false,
           disabled: false,
-          isButton: false,
+          isButton: true,
         },
         {
           id: 3,
           type: "base",
           name: "textarea",
-          text: "",
-          placeholder: "주문 요청사항을 입력해주세요.",
+          text: "읽기 전용",
+          placeholder: "textarea-placeholder",
           characters: "입력해주세요.",
           cols: 50,
           rows: 5,
-          placeholderColor: "black",
-          readonly: false,
-          disabled: false,
+          readonly: true,
+          disabled: true,
           isButton: false,
         },
       ],
@@ -76,5 +75,12 @@ export default {
 <style lang="scss" scoped>
 .multi-line-text-ui {
   width: 100vw;
+  & > section {
+    width: fit-content;
+    width: -moz-fit-content;
+    // ie 용
+    display: table;
+    margin: 0 auto;
+  }
 }
 </style>
