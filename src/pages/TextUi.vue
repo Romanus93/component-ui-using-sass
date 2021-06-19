@@ -73,14 +73,5 @@ export default {
 
 
 <style lang="scss" scoped>
-.multi-line-text-ui {
-  width: 100vw;
-  & > section {
-    width: fit-content;
-    width: -moz-fit-content;
-    // ie 용
-    display: table;
-    margin: 0 auto;
-  }
-}
+@import "../assets/scss/pages/textUi.scss";
 </style>

@@ -25,5 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/userRating.scss";
+@import "../assets/scss/components/userRating.scss";
 </style>

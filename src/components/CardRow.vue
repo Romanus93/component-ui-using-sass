@@ -45,5 +45,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/cardRow.scss";
+@import "../assets/scss/components/cardRow.scss";
 </style>

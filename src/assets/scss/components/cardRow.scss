@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+@import "../utils/mixin";
+@import "../utils/variable";
+
 .row-card-container {
   width: 50%;
   display: inline-block;
@@ -11,7 +14,7 @@
     left: 2.5px;
     top: 2.5px;
     margin-bottom: 5px;
-    border: 1px solid black;
+    @include border_radius(2px, 10px);
 
     &__image {
       width: 40%;
@@ -41,9 +44,7 @@
       .card__info {
         .title {
           line-height: 1.5em;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          @include text_one_line;
         }
 
         .comment {
@@ -87,15 +88,15 @@
     .comment {
       max-height: 7.2em;
 
-      &:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: white; /* 배경색과 동일하게 적용 */
-      }
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   right: 0;
+      //   width: 1em;
+      //   height: 1em;
+      //   margin-top: 0.2em;
+      //   background: $color-white; /* 배경색과 동일하게 적용 */
+      // }
     }
   }
 }

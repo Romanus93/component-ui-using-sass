@@ -49,5 +49,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/cardCol.scss";
+@import "../assets/scss/components/cardCol.scss";
 </style>

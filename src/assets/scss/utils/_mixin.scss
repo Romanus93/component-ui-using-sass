@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+// mixin
+
+@mixin text_one_line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin border_radius($width, $radius) {
+  border: $width solid $color-grey-200;
+  border-radius: $radius;
+}

@@ -72,28 +72,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.multi-line-text-container {
-  width: 100%;
-  margin: 10px;
-  .multi-line-text {
-    position: relative;
-    width: fit-content;
-
-    & > textarea {
-      /* ie 스크롤바 없애기 */
-      overflow: hidden;
-    }
-
-    .characters-counter {
-      position: absolute;
-      bottom: 8px;
-      right: 10px;
-    }
-  }
-
-  .btn--save {
-    width: 50px;
-    height: 30px;
-  }
-}
+@import "../assets/scss/components/multiLineText.scss";
 </style>

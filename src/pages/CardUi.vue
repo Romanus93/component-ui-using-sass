@@ -80,5 +80,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/cardUi.scss";
+@import "../assets/scss/pages/cardUi.scss";
 </style>
