@@ -1,4 +1,4 @@
-# ui-practice
+# ui-practice - node-v 14.17.0 / npm-v 7.15.1
 
 ## Project setup
 ```
